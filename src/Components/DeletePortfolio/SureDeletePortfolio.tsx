@@ -59,8 +59,6 @@ const SureDeletePortfolio: React.FC<sureHandle> = (props) => {
                   IndexedDBService.getAllPortfoliosName().then((res2) => {
                     setShowAnimation(true);
                     deleting().then((res3) => {
-                      console.log(res3);
-
                       dispatch(removePortfoliosName(PortfolioId));
                       if (res2.length) {
                         props.sureOffHandle();

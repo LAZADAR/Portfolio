@@ -79,6 +79,7 @@ const SelectionMenu: React.FC<show> = (props) => {
         {wallets.length ? (
           wallets.map((wallet) => (
             <NavLink
+              key={wallet.id}
               onClick={() => {
                 props.close();
               }}

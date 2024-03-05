@@ -49,11 +49,8 @@ const Sure: React.FC<SureFN> = (props) => {
               );
 
               if (index !== undefined && index >= 0) {
-                console.log(index);
-
                 const TokenArr = [...portfolio.Tokens!];
                 TokenArr?.splice(index, 1);
-                console.log(TokenArr);
 
                 IndexedDBService.updatePortfolio({
                   ...portfolio,

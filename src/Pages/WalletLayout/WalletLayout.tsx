@@ -132,6 +132,7 @@ const WalletLayout = () => {
                   {walletInfo.Tokens?.map((token) => {
                     return (
                       <Asset
+                        key={token.id}
                         selectToken={selectTokenHandle}
                         isloading={isloading}
                         tokenName={token.id}

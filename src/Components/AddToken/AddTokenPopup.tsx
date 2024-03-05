@@ -231,7 +231,7 @@ const AddTokenPopup: React.FC<popupProp> = (props) => {
           maxLength={20}
           id="tokenInput"
           onFocus={() => setShowPopup(true)}
-          value={tokenInfo?.id}
+          value={tokenInfo!.id}
           onChange={(event) => {
             setTokenInfo({ id: event.target.value.toUpperCase() });
             if (tokenInfo?.id) {
@@ -289,17 +289,12 @@ const AddTokenPopup: React.FC<popupProp> = (props) => {
         <button
           onClick={async (event) => {
             event.preventDefault();
-            console.log('FIRST ZONE');
-            console.log(submitResult);
 
             if (tokenInfo.buyPrice && tokenInfo.id && tokenInfo.quantity) {
               setSubmitResult(true);
-              console.log('SECOND ZONE');
-              console.log(submitResult);
+
               if (tokenlist.includes(tokenInfo.id)) {
                 setSubmitResult(true);
-                console.log('Third ZONE');
-                console.log(submitResult);
 
                 await IndexedDBService.AddToken(props.PopupId, {
                   id: tokenInfo.id!,
@@ -332,9 +327,8 @@ const AddTokenPopup: React.FC<popupProp> = (props) => {
                 setTimeout(() => setShowResult(true), 0);
                 setTimeout(() => dispatch(isOpen(false)), 1500);
               } else {
-                console.log('ELSE ZONE');
                 setSubmitResult(false);
-                console.log(submitResult);
+
                 setTimeout(() => setShowResult(true), 0);
                 setTimeout(() => setShowResult(false), 2000);
               }

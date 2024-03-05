@@ -54,7 +54,7 @@ const Asset: React.FC<assetData> = (props) => {
       props.tokenName &&
       changes[props.tokenName]?.PercentChange ? (
         <>
-          <p className={styles.asset}>
+          <div className={styles.asset}>
             {changes[props.tokenName]?.PercentChange !== undefined ? (
               <div className={styles.name}>
                 <p> {props.tokenName}</p>
@@ -71,7 +71,7 @@ const Asset: React.FC<assetData> = (props) => {
             ) : (
               props.tokenName
             )}
-          </p>
+          </div>
           <p className={styles.asset}>{props.price}</p>
           <p className={styles.asset}>{formatNumber(props.quantity)}</p>
           <p className={styles.asset}>{formatNumber(props.total)}</p>

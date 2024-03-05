@@ -40,8 +40,6 @@ const walletSlice = createSlice({
         (element) => element.id === action.payload
       );
       if (index !== -1) {
-        console.log('DELETEING');
-
         if (state.walletList.length > 1) state.walletList.splice(index, 1);
         else state.walletList = [];
       }
@@ -97,8 +95,6 @@ const walletSlice = createSlice({
         );
 
         if (index! > -1 && state.currentPortfolio.Tokens) {
-          console.log('INSIDE CHANGE');
-
           let TotalPrice =
             state.currentPortfolio.Tokens[index!].quantity *
             state.currentPortfolio.Tokens[index!].buyPrice;

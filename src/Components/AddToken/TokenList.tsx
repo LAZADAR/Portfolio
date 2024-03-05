@@ -37,6 +37,7 @@ const TokenList: React.FC<filteredList> = (props) => {
       <div className={styles.content}>
         {filteredList.map((token) => (
           <div
+            key={token}
             onClick={(event) => props.selected(token)}
             className={styles.token}
           >

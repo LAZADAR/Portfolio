@@ -48,7 +48,6 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
     const yesterday = props.tokenInfo.transactions.findIndex(
       (transaction) => transaction.date < Date.now() - 86400000
     );
-    console.log(yesterday);
 
     isyesterday = yesterday >= 0;
   }
@@ -56,7 +55,6 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
     SetSure(false);
   };
 
-  console.log(isyesterday);
   const TotalPortfolioChange =
     props.tokenInfo.currentPrice * props.tokenInfo.quantity -
     props.tokenInfo.buyPrice * props.tokenInfo.quantity;
@@ -81,7 +79,6 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
       document.removeEventListener('click', clickOutside);
     };
   }, []);
-  console.log(props.tokenInfo.changes.DayPrice);
 
   const StartPrice = props.tokenInfo.transactions.reduce(
     (acc, el) => acc + el.price * el.quantity,
@@ -176,10 +173,11 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
         </section>
         <section className={styles.transactionsContent}>
           {props.tokenInfo.transactions.map((element) => {
-            console.log(new Date(element.date).getDate());
-
             return (
-              <div className={styles.transactionDataContainer}>
+              <div
+                key={element.date}
+                className={styles.transactionDataContainer}
+              >
                 <p className={styles.transactionData}>
                   {getDate(element.date)}
                 </p>
