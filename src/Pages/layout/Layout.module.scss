@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: fit-content;
+  width: 1070px;
+}
+header {
+  a {
+    margin-left: auto;
+    justify-self: flex-end;
+    color: white;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    background-color: #14110f;
+  }
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+
+  top: 0px;
+  width: 100%;
+  height: 100px;
+}
+@media screen and (max-width: 1150px) {
+  .container {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .container {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    p {
+      font-size: 14px;
+    }
+    width: 400px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .container {
+    width: 300px;
+  }
+}

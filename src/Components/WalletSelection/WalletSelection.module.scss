@@ -1,0 +1,25 @@
+.selection {
+  user-select: none;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  z-index: 50;
+
+  border: none;
+  outline: none;
+  width: 120px;
+  height: 40px;
+}
+.reversed {
+  .selectIcon {
+    transition: 0.5s ease;
+    transform: rotateX(180deg);
+  }
+}

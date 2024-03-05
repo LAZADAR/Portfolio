@@ -1,0 +1,184 @@
+.container {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 100px;
+  p {
+    width: 50%;
+    font-size: larger;
+    font-weight: 500;
+    line-height: 1.9rem;
+  }
+}
+.photo {
+  width: 40%;
+}
+.first {
+  width: 100%;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.second {
+  width: 100%;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accent {
+  font-size: 2.3rem;
+  font-weight: 800;
+
+  color: #14110f;
+}
+.block2 {
+  position: relative;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 90px;
+  &::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    background-color: #14110f;
+    height: 5px;
+    bottom: 0px;
+    border-radius: 5px;
+  }
+}
+.end {
+  margin-top: 50px;
+  align-self: center !important;
+  font-size: 2rem;
+  width: fit-content !important;
+}
+.block {
+  opacity: 1;
+  transition: 1s ease;
+  padding-left: 20px;
+  position: relative;
+  &::before {
+    content: '';
+    height: 120%;
+    position: absolute;
+    left: 0px;
+    width: 5px;
+    top: -10%;
+    background-color: #14110f;
+    border-radius: 5px;
+  }
+  p {
+    width: 100%;
+  }
+
+  width: 60%;
+  display: flex;
+
+  flex-direction: column;
+}
+.SecondBlock {
+  padding-left: 20px;
+  position: relative;
+  color: #a9a9a9;
+  margin-left: 30%;
+  font-size: large;
+  &::before {
+    content: '';
+    height: 120%;
+    position: absolute;
+    left: 0px;
+    width: 5px;
+    top: -10%;
+    background-color: #a9a9a9;
+    border-radius: 5px;
+  }
+  p {
+    width: 100%;
+  }
+
+  width: 60%;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.animation {
+  max-width: 400px;
+}
+.tutorial {
+  margin-top: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+  img {
+    border-radius: 20px;
+    width: 50%;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    .first {
+      flex-direction: column-reverse;
+      margin-bottom: 30px;
+    }
+
+    p {
+      text-align: start;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .second {
+      gap: 50px;
+      flex-direction: column;
+    }
+  }
+  .end {
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  .block2 {
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  .block {
+    align-self: flex-start;
+    margin-bottom: 5%;
+  }
+  .SecondBlock {
+    margin-left: 10%;
+    p {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+  .animation {
+    svg {
+      width: 100%;
+    }
+    width: 100%;
+  }
+  .tutorial {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .first {
+  }
+  .animation {
+    width: 100% !important;
+  }
+}

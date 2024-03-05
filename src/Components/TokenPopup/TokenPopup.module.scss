@@ -1,0 +1,329 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  z-index: 800;
+  top: 0px;
+  left: 0px;
+  background-color: rgba($color: #ffffff, $alpha: 0.4);
+  backdrop-filter: blur(15px);
+  width: 100vw;
+  height: 100svh;
+
+  h2,
+  h1,
+  p {
+    margin: 0px;
+  }
+  .popup {
+    .close {
+      z-index: 600;
+      top: 10px;
+      right: 10px;
+      height: 35px;
+      width: 35px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      svg path {
+        fill: white;
+      }
+    }
+    overflow: hidden;
+    position: relative;
+    .sure {
+      backdrop-filter: blur(5px);
+      .sureBlock {
+        position: relative;
+        .animationblock {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #ffffff;
+          z-index: 600;
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          .deleteanimation {
+            width: 20%;
+          }
+        }
+        background-color: #ffffff;
+        p {
+          color: black;
+        }
+
+        width: 600px;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        justify-content: space-around;
+        .choise {
+          display: flex;
+          gap: 10px;
+        }
+        button {
+          &:hover {
+            background-color: #14110f;
+            color: white;
+          }
+          cursor: pointer;
+          font-size: large;
+          background-color: white;
+          color: black;
+          outline: none;
+          border: none;
+          width: 200px;
+          height: 60px;
+          border-radius: 5px;
+        }
+      }
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      display: flex;
+    }
+    p {
+      color: #a9a9a9;
+    }
+    .positive {
+      white-space: nowrap;
+      width: fit-content;
+      color: #2dc653;
+    }
+    .negative {
+      white-space: nowrap;
+      width: fit-content;
+      color: red;
+    }
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #14110f;
+    width: 700px;
+    height: 600px;
+    border-radius: 20px;
+    .top {
+      height: fit-content;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        width: fit-content;
+        height: fit-content;
+        font-size: 3rem;
+      }
+      .mainInfo {
+        box-sizing: border-box;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-height: 30px;
+        height: fit-content;
+        padding-right: 5px;
+        .mainInfoBlock {
+          height: fit-content;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+        }
+      }
+      .costInfo {
+        margin-top: 20px;
+
+        min-height: 50px;
+        height: fit-content;
+        align-items: start;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 20px;
+        justify-content: space-between;
+
+        .total {
+          overflow: hidden;
+          height: fit-content;
+          align-items: center;
+          flex-wrap: wrap;
+          max-width: 100%;
+          p {
+            margin: 0px;
+          }
+          display: flex;
+
+          gap: 10px;
+          h2 {
+            font-size: 1.3rem;
+          }
+          .balanceInUsdt {
+            color: #a9a9a9;
+            font-size: 1rem;
+          }
+        }
+        .changes {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          h2 {
+            font-size: 1.3rem;
+          }
+        }
+        h2 {
+          font-size: 1.7rem;
+        }
+      }
+    }
+
+    .transactionsContent {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(auto-fit, 50px);
+
+      overflow-y: auto;
+      height: 250px;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        background-color: #14110f;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #2b41ff;
+        border-radius: 5px;
+      }
+    }
+    .transactions {
+      align-items: center;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 37% 21% 21% 21%;
+      grid-template-rows: 50px;
+    }
+    .transactionDataContainer {
+      .transactionData {
+        color: #2dc653;
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+      min-height: 50px;
+      overflow: hidden;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 37% 21% 21% 21%;
+
+      grid-template-rows: 50px;
+    }
+    .deleteButton {
+      cursor: pointer;
+      color: red;
+      font-weight: 600;
+      outline: none;
+      border: none;
+      border-radius: 7px;
+      width: 200px;
+      min-height: 40px;
+      margin-top: auto;
+      align-self: center;
+      justify-self: flex-end;
+      &:hover {
+        background-color: #ffa4a4;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .popup {
+    width: 600px !important;
+  }
+  .sureBlock {
+    p {
+      font-size: 1.5rem;
+    }
+    width: 70% !important;
+    .choise {
+      width: 90%;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .popup {
+    width: 500px !important;
+  }
+  .transactionData {
+    text-overflow: ellipsis !important;
+    padding-right: 7px;
+  }
+
+  .changes {
+    display: flex;
+    flex-wrap: wrap;
+    h2 {
+      font-size: 1rem !important;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .costInfo {
+    height: fit-content !important;
+  }
+  .popup {
+    width: 400px !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .popup {
+    .transactionDataContainer {
+      justify-items: center !important;
+    }
+
+    width: 350px !important;
+  }
+}
+@media screen and (max-height: 600px) {
+  .container {
+    .popup {
+      height: 500px;
+      gap: 10px;
+    }
+  }
+}
+@media screen and (max-height: 500px) {
+  .container {
+    height: 600px;
+    overflow-y: auto !important;
+  }
+}

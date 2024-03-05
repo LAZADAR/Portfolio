@@ -1,0 +1,73 @@
+.title {
+  height: 40px;
+  font-weight: 700;
+  font-size: 1.9rem;
+  border: none;
+  outline: none;
+  padding: 0px;
+  box-sizing: border-box;
+
+  width: fit-content;
+  &:disabled {
+    color: #14110f;
+    background-color: transparent;
+  }
+}
+.accent {
+  font-size: 2rem;
+  font-weight: 800;
+
+  color: #2b41ff;
+}
+.rename {
+  display: block;
+  margin-left: auto;
+  justify-self: end;
+  cursor: pointer;
+  border-radius: 10px;
+  min-width: 45px;
+  min-height: 40px;
+  outline: none;
+  border: none;
+  background-color: #eaeaea;
+  svg {
+    width: 100%;
+  }
+  &:hover {
+    background-color: #14110f;
+    svg path {
+      margin: auto;
+      fill: white;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .title {
+    font-size: 1.4rem;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .title {
+    font-weight: 700;
+    font-size: 1.4rem;
+    width: 200px;
+    padding-right: 15px;
+    text-overflow: ellipsis;
+  }
+  .rename {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .title {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .title {
+    width: 130px;
+  }
+}
