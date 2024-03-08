@@ -40,7 +40,10 @@ const Home = () => {
       <section className={styles.tutorial}>
         <h2 className={styles.accent}>How to start?</h2>
         <div className={styles.block}>
-          <p>First, create a portfolio. It's enough to just name it.</p>
+          <p>
+            First, create a portfolio. Click on "Portfolio" at the top of the
+            page. It's enough to just name it.
+          </p>
         </div>
         <img className={styles.photo} src="/img/image 5.png" alt="" />
         <div className={styles.block}>
