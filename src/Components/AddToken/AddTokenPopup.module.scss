@@ -125,6 +125,9 @@
     input {
       min-height: 50px;
     }
+    button {
+      min-height: 50px;
+    }
     .Quantity {
       input {
         height: 50px;
@@ -137,7 +140,10 @@
 @media screen and (max-height: 480px) {
   .container {
     height: 600px;
-
-    overflow: auto !important;
+    align-items: start;
+    .popup {
+      overflow-y: auto;
+      height: 100vh !important;
+    }
   }
 }

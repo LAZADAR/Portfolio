@@ -39,13 +39,7 @@ const AddTokenPopup: React.FC<popupProp> = (props) => {
       return getSpotPriceForPair(value);
     }
   };
-  const Resize = () => {
-    if (window.innerHeight > 450) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  };
+
   const unfocusHandle = (value: boolean) => {
     !value && setShowPopup(false);
   };
@@ -187,7 +181,7 @@ const AddTokenPopup: React.FC<popupProp> = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [priceValue]);
   React.useEffect(() => {
-    Resize();
+    document.body.style.overflow = 'hidden';
     const clickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
 
@@ -198,10 +192,9 @@ const AddTokenPopup: React.FC<popupProp> = (props) => {
       )
         dispatch(isOpen(false));
     };
-    window.addEventListener('resize', Resize);
+
     document.addEventListener('click', clickOutside);
     return () => {
-      window.removeEventListener('resize', Resize);
       document.body.style.overflow = 'auto';
       document.removeEventListener('click', clickOutside);
     };

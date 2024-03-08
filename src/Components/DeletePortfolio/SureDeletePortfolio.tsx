@@ -31,6 +31,12 @@ const SureDeletePortfolio: React.FC<sureHandle> = (props) => {
       }, 1500);
     });
   };
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
   return (
     <div className={styles.sure}>
       <div className={styles.sureBlock}>

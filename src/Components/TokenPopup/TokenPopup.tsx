@@ -11,6 +11,7 @@ interface tokeninfo {
   tokenInfo: token;
 }
 const TokenPopup: React.FC<tokeninfo> = (props) => {
+  window.scrollTo(0, 0);
   const [sure, SetSure] = React.useState(false);
   const dispatch = useAppDispatch();
   const getDate = (date: number): string => {
@@ -25,14 +26,7 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
 
     return `${day}.${month}.${year} | ${hour}:${minutes}:${seconds}`;
   };
-
-  const Resize = () => {
-    if (window.innerHeight > 500) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  };
+  const popupRef = React.useRef<HTMLDivElement>(null);
 
   const handleTouchEnd = (event: React.TouchEvent<HTMLButtonElement>) => {
     event.stopPropagation();
@@ -60,7 +54,7 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
     props.tokenInfo.buyPrice * props.tokenInfo.quantity;
 
   React.useEffect(() => {
-    Resize();
+    document.body.style.overflow = 'hidden';
     const clickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
 
@@ -71,10 +65,9 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
       )
         dispatch(isOpenToken(false));
     };
-    window.addEventListener('resize', Resize);
+
     document.addEventListener('click', clickOutside);
     return () => {
-      window.removeEventListener('resize', Resize);
       document.body.style.overflow = 'auto';
       document.removeEventListener('click', clickOutside);
     };
@@ -86,8 +79,14 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
   );
   return (
     <div className={styles.container}>
-      <div className={styles.popup}>
-        {sure && <Sure token={props.tokenInfo} sureHandle={sureHandle} />}
+      <div ref={popupRef} className={styles.popup}>
+        {sure && (
+          <Sure
+            popupRef={popupRef}
+            token={props.tokenInfo}
+            sureHandle={sureHandle}
+          />
+        )}
         <button
           onTouchEnd={handleTouchEnd}
           onClick={handleClick}
@@ -192,7 +191,17 @@ const TokenPopup: React.FC<tokeninfo> = (props) => {
             );
           })}
         </section>
-        <button onClick={() => SetSure(true)} className={styles.deleteButton}>
+        <button
+          onClick={() => {
+            if (popupRef.current) {
+              popupRef.current.scrollTo(0, 0);
+              popupRef.current.style.overflow = 'hidden';
+            }
+
+            SetSure(true);
+          }}
+          className={styles.deleteButton}
+        >
           Delete token
         </button>
       </div>

@@ -10,6 +10,7 @@ import animationData from '../../animations/Animation - Accepted.json';
 interface SureFN {
   sureHandle: () => void;
   token: token;
+  popupRef: React.RefObject<HTMLDivElement>;
 }
 
 const Sure: React.FC<SureFN> = (props) => {
@@ -41,7 +42,15 @@ const Sure: React.FC<SureFN> = (props) => {
         )}
         <p>Are you sure?</p>
         <div className={styles.choise}>
-          <button onClick={() => props.sureHandle()}>No</button>
+          <button
+            onClick={() => {
+              if (props.popupRef.current)
+                props.popupRef.current.style.overflow = 'auto';
+              props.sureHandle();
+            }}
+          >
+            No
+          </button>
           <button
             onClick={() => {
               const index = portfolio.Tokens?.findIndex(
