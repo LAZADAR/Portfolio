@@ -1,5 +1,5 @@
 import IndexedDBService, { Portfolio } from './IndexedDB';
-import { PriceList, addPortfoliosName } from './store/walletSlice';
+import { addPortfoliosName } from './store/walletSlice';
 import { useAppDispatch } from './hook';
 import { getSpotPriceForPair } from './BinanceFetch';
 

@@ -6,7 +6,6 @@ import IndexedDBService from '../../IndexedDB';
 import { removePortfoliosName } from '../../store/walletSlice';
 import animationData from '../../animations/Animation - Accepted.json';
 import Lottie from 'lottie-react';
-import { resolve } from 'path';
 type sureHandle = {
   sureOffHandle: () => void;
 };
@@ -49,7 +48,7 @@ const SureDeletePortfolio: React.FC<sureHandle> = (props) => {
             />
           </div>
         )}
-        <p>You going to delete a portfolio. Are you sure?</p>
+        <p>You are going to delete a portfolio. Are you sure?</p>
         <div className={styles.choise}>
           <button
             onClick={() => {
